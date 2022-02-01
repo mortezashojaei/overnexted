@@ -1,3 +1,4 @@
+import Head from 'next/head';
 import { PostType } from '../../types';
 import { Container } from './styled';
 
@@ -8,6 +9,9 @@ type Props = {
 export const HomePage: React.FC<Props> = ({ data }) => {
   return (
     <Container>
+      <Head>
+        <title>Overnexted</title>
+      </Head>
       {data.map((item) => (
         <div key={item.id}>{item.title}</div>
       ))}
