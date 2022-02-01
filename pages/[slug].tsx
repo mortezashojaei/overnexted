@@ -1,10 +1,25 @@
 import React from 'react';
-import { useRouter } from 'next/router';
+import {
+  GetServerSideProps,
+  InferGetServerSidePropsType,
+} from 'next';
 import { PostPage } from '../components';
+import { showPost } from '../api';
 
-export default () => {
-  const router = useRouter();
-  const { slug } = router.query;
+export const getServerSideProps: GetServerSideProps<
+  { [key: string]: any },
+  { slug: string }
+> = async ({ params }) => {
+  const data = await showPost(Number(params?.slug));
+  return {
+    props: {
+      data: data.data,
+    },
+  };
+};
 
-  return <PostPage />;
+export default ({
+  data,
+}: InferGetServerSidePropsType<typeof getServerSideProps>) => {
+  return <PostPage data={data} />;
 };
