@@ -1,3 +1,6 @@
+## Enviroment requirements:
+`cp .env.example .env`
+
 ## Install requirements:
 
 `yarn`
