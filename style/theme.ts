@@ -1,8 +1,8 @@
 export const darkTheme = {
   colors: {
     background: '#282c35',
-    textNormal: '#222',
-    textTitle: '#222',
+    textNormal: 'hsla(0,0%,100%,0.88)',
+    textTitle: '#fff',
     textLink: '#ffa7c4',
     header: '#ffa7c4',
   },
