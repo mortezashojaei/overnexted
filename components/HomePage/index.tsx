@@ -12,6 +12,7 @@ export const HomePage: React.FC<Props> = ({ data }) => {
       <Head>
         <title>Overnexted</title>
       </Head>
+      <h1>Overnexted</h1>
       {data.map((item) => (
         <div key={item.id}>{item.title}</div>
       ))}
