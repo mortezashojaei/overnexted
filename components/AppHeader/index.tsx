@@ -1,4 +1,6 @@
 import Link from 'next/link';
+import Toggle from 'react-toggle';
+
 import { useAppDispatch, useAppSelector } from '../../store/hooks';
 import {
   selectTheme,
@@ -22,11 +24,8 @@ export const AppHeader = () => {
           <a>Overnexted</a>
         </Link>
       </h1>
-      <input
-        onClick={handleToggle}
-        checked={isDark}
-        type="checkbox"
-      />
+
+      <Toggle checked={isDark} onClick={handleToggle} />
     </Container>
   );
 };

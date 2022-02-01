@@ -126,4 +126,8 @@ export const GlobalStyles = createGlobalStyle`
     text-decoration: none;
     all:unset;
     }
+
+    *{
+        transition: all .2s;
+    }
 `;
