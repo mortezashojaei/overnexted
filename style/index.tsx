@@ -1,4 +1,5 @@
 import { ThemeProvider as StyledComponentProvider } from 'styled-components';
+import { AppHeader } from '../components';
 import { useAppSelector } from '../store/hooks';
 import { selectTheme } from '../store/theme';
 import { AppBody, AppContainer } from './Container';
@@ -14,7 +15,10 @@ export const ThemeProvider: React.FC = ({ children }) => {
     >
       <AppContainer>
         <GlobalStyles />
-        <AppBody>{children}</AppBody>
+        <AppBody>
+          <AppHeader />
+          {children}
+        </AppBody>
       </AppContainer>
     </StyledComponentProvider>
   );
